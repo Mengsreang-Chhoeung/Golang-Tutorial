@@ -362,3 +362,88 @@ Hello World
       ```js
         my_variable_name = "John"
       ```
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រកាសអថេរនិងផ្តល់តម្លៃទៅឲ្យអថេរនោះរួចហើយ អ្នកក៏ចង់ផ្លាស់ប្តូរតម្លៃរបស់អថេរនោះវិញ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var student1 string = "Peter"
+      fmt.Println(student1)
+      student1 = "John"
+      fmt.Println(student1)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    Peter
+    John
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រកាសអថេរដែលមិនអាចផ្លាស់ប្តូរតម្លៃនៅពេលក្រោយបានគឺប្រើ _keyword const_ :
+
+  ```js
+    package main
+    import ("fmt")
+
+    const PI = 3.14
+
+    func main() {
+      fmt.Println(PI)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    3.14
+  ```
+
+> បើអ្នកព្យាយាមផ្លាស់ប្តូរតម្លៃដូចឧទាហរណ៍ខាងក្រោម អ្នកនឹងជួប erorr:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      const A = 1
+      A = 2
+      fmt.Println(A)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    ./prog.go:8:7: cannot assign to A
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រកាសអថេរដែលមិនអាចផ្លាស់ប្តូរតម្លៃនៅពេលក្រោយបានគឺប្រើ _keyword const_ ដែលស្ថិតនៅក្នុងប្លុក :
+
+  ```js
+    package main
+    import ("fmt")
+
+    const (
+      A int = 1
+      B = 3.14
+      C = "Hi!"
+    )
+
+    func main() {
+      fmt.Println(A)
+      fmt.Println(B)
+      fmt.Println(C)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    1
+    3.14
+    Hi!
+  ```
