@@ -89,6 +89,13 @@ go run app.go
 Hello World
 ```
 
+## Comment ជាអ្វី?
+
+- **Comment** ជា _statement_ មួយដែលប្រើសម្រាប់បិទកូដចោលឬក៏ប្រើសម្រាប់សម្រាយពីដំណើរការនៃកូដ។ ហើយ _comment_ នៅក្នុងភាសា **Golang** គឺមានពីរគឺ:
+  - //... : _Single-line Comment_
+  - /\*...\*/ : _Multi-line Comment_
+
+
 ## Variable ជាអ្វី?👀
 
 - **Variable** ឬក៏ អថេរ គឺជា អញ្ញាតធម្មតាមួយដែលប្រើសម្រាប់រក្សាទុកនៅទិន្នន័យ។ វាមាននៅប្រភេទអថេរជាច្រើនដូចខាងក្រោម:
@@ -121,6 +128,60 @@ Hello World
   ```
 
   - ដោយក្នុង _Syntax Two_ មាន:
+
     - _variableName_ : គឺឈ្មោះអថេរដែលអ្នកចង់ដាក់ ។
     - _value_ : គឺតម្លៃដែលអ្នកកំណត់ទៅឲ្យអថេរ ។
     - _:=_ : គឺជាសញ្ញាដែលបង្កើតអថេរតាមប្រភេទអថេរដែលមាននៅក្នុងតម្លៃរបស់អថេរ ឧទាហរណ៍ តម្លៃអថេរគឺ ១០​ នោះតម្លៃអថេរនោះនឹងបង្កើតប្រភេទអថេរដោយខ្លួនឯងទៅជា ប្រភេទអថេរជា _int_ ភ្លាមៗ។
+
+
+- ឧទាហរណ៍:
+
+```js
+package main
+import ("fmt")
+
+func main() {
+  var student1 string = "John" //type is string
+  var student2 = "Jane" //type is inferred
+  x := 2 //type is inferred
+
+  fmt.Println(student1)
+  fmt.Println(student2)
+  fmt.Println(x)
+}
+```
+
+**បញ្ជាក់:** សម្រាប់អថេរ `student2` និង `x` គឺវានឹងបង្កើតប្រភេទអថេរដោយខ្លួនឯង។
+
+> លទ្ធផលកូដខាងលើ:
+
+```js
+  John
+  Jane
+  2
+```
+
+- ឧទាហរណ៍ខាងក្រោមនេះ ជាការប្រកាសអថេរដោយមិនផ្តល់តម្លៃទៅអថេរ:
+
+```js
+package main
+import ("fmt")
+
+func main() {
+  var a string
+  var b int
+  var c bool
+
+  fmt.Println(a)
+  fmt.Println(b)
+  fmt.Println(c)
+}
+```
+
+> លទ្ធផលកូដខាងលើ:
+
+```js
+  ""
+  0
+  false
+```
