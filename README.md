@@ -89,7 +89,7 @@ go run app.go
 Hello World
 ```
 
-## Comment ជាអ្វី?
+## Comment ជាអ្វី?👀
 
 - **Comment** ជា _statement_ មួយដែលប្រើសម្រាប់បិទកូដចោលឬក៏ប្រើសម្រាប់សម្រាយពីដំណើរការនៃកូដ។ ហើយ _comment_ នៅក្នុងភាសា **Golang** គឺមានពីរគឺ:
   - //... : _Single-line Comment_
@@ -136,52 +136,229 @@ Hello World
 
 - ឧទាហរណ៍:
 
-```js
-package main
-import ("fmt")
+  ```js
+  package main
+  import ("fmt")
 
-func main() {
-  var student1 string = "John" //type is string
-  var student2 = "Jane" //type is inferred
-  x := 2 //type is inferred
+  func main() {
+    var student1 string = "John" //type is string
+    var student2 = "Jane" //type is inferred
+    x := 2 //type is inferred
 
-  fmt.Println(student1)
-  fmt.Println(student2)
-  fmt.Println(x)
-}
-```
+    fmt.Println(student1)
+    fmt.Println(student2)
+    fmt.Println(x)
+  }
+  ```
 
-**បញ្ជាក់:** សម្រាប់អថេរ `student2` និង `x` គឺវានឹងបង្កើតប្រភេទអថេរដោយខ្លួនឯង។
+  **បញ្ជាក់:** សម្រាប់អថេរ `student2` និង `x` គឺវានឹងបង្កើតប្រភេទអថេរដោយខ្លួនឯង។
 
-> លទ្ធផលកូដខាងលើ:
+  > លទ្ធផលកូដខាងលើ:
 
-```js
-  John
-  Jane
-  2
-```
+  ```js
+    John
+    Jane
+    2
+  ```
 
 - ឧទាហរណ៍ខាងក្រោមនេះ ជាការប្រកាសអថេរដោយមិនផ្តល់តម្លៃទៅអថេរ:
 
-```js
-package main
-import ("fmt")
+  ```js
+  package main
+  import ("fmt")
 
-func main() {
-  var a string
-  var b int
-  var c bool
+  func main() {
+    var a string
+    var b int
+    var c bool
 
-  fmt.Println(a)
-  fmt.Println(b)
-  fmt.Println(c)
-}
-```
+    fmt.Println(a)
+    fmt.Println(b)
+    fmt.Println(c)
+  }
+  ```
 
-> លទ្ធផលកូដខាងលើ:
+  > លទ្ធផលកូដខាងលើ:
 
-```js
-  ""
-  0
-  false
-```
+  ```js
+    ""
+    0
+    false
+  ```
+- ឧទាហរណ៍ខាងក្រោមនេះជាការបញ្ជូលតម្លៃបន្ទាប់ពីអថេរត្រូវបានប្រកាសរួច:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var student1 string
+      student1 = "John"
+      fmt.Println(student1)
+    }
+  ```
+
+  **បញ្ជាក់:** អ្នកមិនអាចបង្កើតអថេរដែលមិនបានផ្តល់តម្លៃបាននោះទេ បើសិនជាអ្នកប្រើប្រាស់នូវសញ្ញា `:=` មួយនេះដើម្បីប្រកាសអថេរ។
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    John
+  ```
+- ចំណុចខុសគ្នារវាង `var` និង `:=`
+
+  |         **var**        |         **:=**        |
+  | ------------------ | ---------------------- | 
+  | អាចប្រើបានទាំងក្នុង function និង ក្រៅ function    |  អាចប្រើបានតែក្នុង function តែប៉ុណ្ណោះ   |
+  | ពេលប្រកាសអថេរ អ្នកចង់ផ្តល់តម្លៃឲ្យហើយក៏បាន ឬក៏មិនចង់ដាក់ក៏បាន    |  ពេលប្រកាសអថេររួចគឺទាមទារឲ្យផ្តល់តម្លៃទៅឲ្យអថេរនោះភ្លាមៗ   | 
+  | ពេលប្រកាសអថេរ អ្នកចង់ដាក់ប្រភេទអថេរនៅពីខាងក្រោយឈ្មោះអថេរក៏បាន ឬក៏អត់ក៏បាន   |  ពេលប្រកាសអថេរ អ្នកមិនអាចដាក់ប្រភេទអថេរនៅពីក្រោយឈ្មោះអថេរបាននោះទេ  | ​ 
+  
+- ឧទារហណ៍:
+
+  > ទាក់ទងនឹងការប្រើប្រាស់ `var` នៅក្រៅ function:
+
+  ```js
+    package main
+    import ("fmt")
+
+    var a int
+    var b int = 2
+    var c = 3
+
+    func main() {
+      a = 1
+      fmt.Println(a)
+      fmt.Println(b)
+      fmt.Println(c)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    1
+    2
+    3
+  ```
+
+  > ទាក់ទងនឹងការប្រើប្រាស់ `:=` នៅក្រៅ function:
+
+  ```js
+    package main
+    import ("fmt")
+
+    a := 1
+
+    func main() {
+      fmt.Println(a)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើគឺ error:
+
+  ```js
+    ./prog.go:5:1: syntax error: non-declaration statement outside function body
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមនេះជាការប្រកាសអថេរជាច្រើនអថេរនៅក្នុងបន្ទាត់តែមួយ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var a, b, c, d int = 1, 3, 5, 7
+
+      fmt.Println(a)
+      fmt.Println(b)
+      fmt.Println(c)
+      fmt.Println(d)
+    }
+  ```
+
+  **បញ្ជាក់:** បើអ្នកប្រកាសអថេរជាច្រើនចូលគ្នាអញ្ចឹងហើយមានប្រភេទអថេរនៅពីក្រោយចឹង គឺអ្នកអាចផ្តល់តម្លៃបានតែមួយប្រភេទទិន្នន័យតែប៉ុណ្ណោះ តែបើអ្នកមិនដាក់ប្រភេទិន្នន័យនៅពីក្រោយទេ នោះអ្នកចង់ផ្តល់តម្លៃជាប្រភេទអ្វីក៏បាន។
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    1
+    3
+    5
+    7
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមនេះជាការប្រកាសអថេរជាច្រើនអថេរនៅក្នុងបន្ទាត់តែមួយដោយមិនដាក់ប្រភេទអថេរ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var a, b = 6, "Hello"
+      c, d := 7, "World!"
+
+      fmt.Println(a)
+      fmt.Println(b)
+      fmt.Println(c)
+      fmt.Println(d)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    6
+    Hello
+    7
+    World!
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមនេះជាការប្រកាសអថេរជាច្រើនអថេរនៅក្នុងប្លុកតែមួយ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var (
+        a int
+        b int = 1
+        c string = "hello"
+      )
+
+      fmt.Println(a)
+      fmt.Println(b)
+      fmt.Println(c)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    0
+    1
+    hello
+  ```
+
+- គោលការណ៍សម្រាប់បង្កើតឈ្មោះឲ្យអថេរ:
+  - គោលការណ៍ទាំងនោះមានដូចខាងក្រោម:
+    -	តួរអក្សរដើមគេត្រូវតែជា _alphabet ឬ underscore( _ )_ ។
+    -	តួរអក្សរនៅខាងក្រោយបន្ទាប់អាចជាលេខក៏បាន អក្សរក៏បាន ។
+    -	រាល់សញ្ញាទាំងអស់គឺមិនអនុញ្ញាតឲ្យប្រើឡើយ លើកលែងតែ _underscore( _ )_ តែមួយគត់។
+    -	មិនអនុញ្ញាតឲ្យប្រើតួអក្សរដូចនឹង _keyword_ នៅក្នុងភាសា **Golang** ឡើយ ។
+    -	ឈ្មោះរបស់អថេរដំបូងគួរតែចាប់ផ្តើមពីតួរអក្សរតូចទៅ ហើយវាមិនអនុញ្ញាតឲ្យដកឃ្លាឡើយ បើសិនជាចង់ដកឃ្លាអាចប្រើ _underscore( _ )_ ជំនួសបាន ។
+    -	ឈ្មោះអថេរគឺមានលក្ខណះជា _Case Sensitive_ ឧទាហរណ៍ `myVar` និង `myvar` គឺខុសគ្នា ។
+  
+  - ទម្រង់ទូទៅដែលអ្នកគួរតែយកតម្រាប់តាមមានដូចខាងក្រោម:
+    - Camel Case:
+      ```js
+        myVariableName = "John"
+      ```
+    - Pascal Case:
+      ```js
+        MyVariableName = "John"
+      ```
+    - Snake Case
+      ```js
+        my_variable_name = "John"
+      ```
