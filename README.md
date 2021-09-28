@@ -72,7 +72,7 @@ func main() {
 }
 ```
 
-> សម្រាយពីកូដខាងលើបន្តិច​: `package main` ជា _package_ សម្រាប់សរសេរភាសា **Golang**។ `import "fmt"` ជាការ _import library_ មកប្រើនៅក្នុងកូដ។ `func main() {}` ជា _main function_ សម្រាប់ប្រតិបត្តិកូដរបស់ **Golang**។ ​​`fmt.Println("Hello World")` ដែលស្ថិតនៅខាងក្នុង `func main() {}` វិញ គឺជា _statement_ ដែលនឹងបង្ហាញនូវលទ្ធផលមកលើ _console_។
+> សម្រាយពីកូដខាងលើបន្តិច​: `package main` ជា _package_ ឬ _namespace_ សម្រាប់ភាសា **Golang** ហើយ _package_ ខាងលើនេះគឺឈ្មោះ _main_ ។ `import "fmt"` ជាការ _import library_ មកប្រើនៅក្នុងកូដ។ `func main() {}` ជា _main function_ សម្រាប់ប្រតិបត្តិកូដរបស់ **Golang**។ ​​`fmt.Println("Hello World")` ដែលស្ថិតនៅខាងក្នុង `func main() {}` វិញ គឺជា _statement_ ដែលនឹងបង្ហាញនូវលទ្ធផលមកលើ _console_។
 
 - បន្ទាប់មកដើម្បីប្រតិបត្តិកូដខាងលើនេះបាន អ្នកត្រូវការប្រើប្រាស់នូវ _Terminal_ ដើម្បីសរសេរពាក្យបញ្ជាឲ្យប្រតិបត្តិកូដ:
 
