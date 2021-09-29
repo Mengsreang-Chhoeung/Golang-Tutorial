@@ -584,9 +584,204 @@ Hello World
   ```
 
   > ដើម្បីសិក្សាបន្ថែមអំពីការប្រើប្រាស់ _Go Data Types_ អាចចុចលីងខាងក្រោមនេះ : 
-  > - Go Boolean Data Type : https://www.w3schools.com/go/go_boolean_data_type.php
-  > - Go Integer Data Type : https://www.w3schools.com/go/go_integer_data_type.php
-  > - Go Float Data Type : https://www.w3schools.com/go/go_float_data_type.php
-  > - Go String Data Type : https://www.w3schools.com/go/go_string_data_type.php
+  > - _Go Boolean Data Type_ : https://www.w3schools.com/go/go_boolean_data_type.php
+  > - _Go Integer Data Type_ : https://www.w3schools.com/go/go_integer_data_type.php
+  > - _Go Float Data Type_ : https://www.w3schools.com/go/go_float_data_type.php
+  > - _Go String Data Type_ : https://www.w3schools.com/go/go_string_data_type.php
 
+## Array ជាអ្វី?👀
 
+- **Array** គឺជាសំណុំអញ្ញាតដែលមានប្រភេទទិន្នន័យដូចគ្នានិងមានតម្លៃជាច្រើនដែលផ្ទុកក្នុងអថេរតែមួយ។
+
+- របៀបប្រកាសអថេរជា **Array**:
+
+  > Syntax One with `var` keyword:
+
+  ```js
+    var array_name = [length]datatype{values} // here length is defined
+
+    or
+
+    var array_name = [...]datatype{values} // here length is inferred
+  ```
+
+  > Syntax Two with `:=` sign:
+
+  ```js
+    array_name := [length]datatype{values} // here length is defined
+
+    or
+
+    array_name := [...]datatype{values} // here length is inferred
+  ```
+
+  **បញ្ជាក់** : ពាក្យ `length` នៅខាងលើនេះគឺចង់បញ្ជាក់អំពីចំនួនតម្លៃដែលអ្នកត្រូវផ្តល់នៅក្នុងអថេរនោះ ឬក៏មួយទៀតគឺអ្នកមិនចាំបាច់បញ្ជាក់អំពីចំនួនតម្លៃទេ គឺវានឹងកំណត់ឲ្យអ្នកដោយស្វ័យប្រវត្តិទៅតាមតម្លៃដែលអ្នកបានផ្តល់ទៅឲ្យអថេរ។
+
+- ឧទាហរណ៍:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var arr1 = [3]int{1,2,3}
+      arr2 := [5]int{4,5,6,7,8}
+
+      fmt.Println(arr1)
+      fmt.Println(arr2)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [1 2 3]
+    [4 5 6 7 8]
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺមិនប្រើចំនួន​ `length`:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var arr1 = [...]int{1,2,3}
+      arr2 := [...]int{4,5,6,7,8}
+
+      fmt.Println(arr1)
+      fmt.Println(arr2)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [1 2 3]
+    [4 5 6 7 8]
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការប្រើប្រាស់ជាមួយតួអក្សរ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var cars = [4]string{"Volvo", "BMW", "Ford", "Mazda"}
+      fmt.Print(cars)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [Volvo BMW Ford Mazda]
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការប្រើប្រាស់មុខងារបង្ហាញតម្លៃរបស់ _array_ ទៅតាមលេខ _index_ ដែលលេខ _index_ ចាប់ផ្តើមពីលេខ `0` តទៅ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      prices := [3]int{10,20,30}
+
+      fmt.Println(prices[0])
+      fmt.Println(prices[2])
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    10
+    30    
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការផ្លាស់ប្តូរតម្លៃរបស់ _array_ ទៅតាមលេខ _index_:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      prices := [3]int{10,20,30}
+
+      prices[2] = 50
+      fmt.Println(prices)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [10 20 50]   
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការបង្កើតអថេរជា _array_ ដែលមិនផ្តល់តម្លៃឬមានតម្លៃមួយទៅពីរដែរ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      arr1 := [5]int{} //not initialized
+      arr2 := [5]int{1,2} //partially initialized
+      arr3 := [5]int{1,2,3,4,5} //fully initialized
+
+      fmt.Println(arr1)
+      fmt.Println(arr2)
+      fmt.Println(arr3)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [0 0 0 0 0]
+    [1 2 0 0 0]
+    [1 2 3 4 5]   
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការបង្កើតអថេរជា _array_ ដែលផ្តល់តម្លៃមួយៗនៅក្នុងនោះ:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      arr1 := [5]int{1:10,2:40}
+
+      fmt.Println(arr1)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    [0 10 40 0 0] 
+  ```
+
+  - ឧទាហរណ៍ខាងក្រោមគឺការប្រើប្រាស់មុខងារស្វែងរកចំនួនតម្លៃសរុបរបស់ _array_ គឺ _len()_:
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      arr1 := [4]string{"Volvo", "BMW", "Ford", "Mazda"}
+      arr2 := [...]int{1,2,3,4,5,6}
+
+      fmt.Println(len(arr1))
+      fmt.Println(len(arr2))
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ:
+
+  ```js
+    4
+    6
+  ```
