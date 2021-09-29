@@ -447,3 +447,104 @@ Hello World
     3.14
     Hi!
   ```
+
+## Output Functions នៅក្នុងភាសា Golang:👀
+
+- **Output Functions** គឺជាមុខងារដែលប្រើសម្រាប់បង្ហាញតម្លៃអ្វីមួយទៅកាន់ _console_ ហើយនៅក្នុងភាសា Golang គឺមានចំនួន ៣ គឺ:
+  - _Print()_ : ប្រើសម្រាប់បង្ហាញតម្លៃធម្មតា។
+  - _Println()_ : ប្រើសម្រាប់បង្ហាញតម្លៃធម្មតាដែរ តែវាមានជាការចុះបន្ទាត់ដោយស្វ័យប្រវត្តិ។
+  - _Printf()_ : ប្រើសម្រាប់បង្ហាញតម្លៃធម្មតានិងអាចបង្ហាញតម្លៃជាប្រភេទអថេរឬប្រភេទទិន្នន័យថែមទៀត។
+
+  **បញ្ជាក់** : ដើម្បីអាចប្រើប្រាស់នូវមុខងារខាងលើនេះបាន អ្នកត្រូវ _import package_ មួយដែលមានឈ្មោះថា `fmt` ដែលមានពាក្យពេញគឺ **Format**​ ។
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រើប្រាស់ _Print()_ : 
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var i,j string = "Hello","World"
+
+      fmt.Print(i)
+      fmt.Print(j)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ
+
+  ```js
+    HelloWorld
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រើប្រាស់ _Print()_ ជាមួយនឹងការចុះបន្ទាត់ដោយប្រើ `\n` : 
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var i,j string = "Hello","World"
+
+      fmt.Print(i, "\n")
+      fmt.Print(j, "\n")
+      fmt.Print(i, "\n",j)
+      fmt.Print(i, " ", j)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ
+
+  ```js
+    Hello
+    World
+    Hello
+    World
+    Hello World
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រើប្រាស់ _Println()_ : 
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var i,j string = "Hello","World"
+
+      fmt.Println(i,j)
+      fmt.Println(i,j)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ
+
+  ```js
+    Hello World
+    Hello World
+  ```
+
+- ឧទាហរណ៍ខាងក្រោមទាក់ទងនឹងការប្រើប្រាស់ _Printf()_ ហើយមុខងារគឺមានលក្ខណះខុសប្លែកពីគេបន្តិចគឺបើអ្នកសរសេរ `%v` នៅក្នុង argument នោះ វាបង្ហាញតម្លៃរបស់អរថេរដែលអ្នកបានដាក់នៅពីក្រោយ ហើយបើសរសេរ `%T` វិញវានឹងបង្ហាញជាប្រភេទអរថេរឬប្រភេទទិន្នន័យទៅវិញ : 
+
+  ```js
+    package main
+    import ("fmt")
+
+    func main() {
+      var i string = "Hello"
+      var j int = 15
+
+      fmt.Printf("i has value: %v and type: %T\n", i, i)
+      fmt.Printf("j has value: %v and type: %T", j, j)
+    }
+  ```
+
+  > លទ្ធផលកូដខាងលើ
+
+  ```js
+    i has value: Hello and type: string
+    j has value: 15 and type: int
+  ```
+
+  > អាចចុចលីងមួយនេះដើម្បីសិក្សាបន្ថែមអំពីការប្រើប្រាស់ _Go Formatting Verbs_ : https://www.w3schools.com/go/go_formatting_verbs.php
+
